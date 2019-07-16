@@ -10,6 +10,33 @@ body {
     background-repeat: no-repeat;
 }
 
+/*  cool color changing code */
+
+/* body {
+  animation: 10000ms ease-in-out infinite color-change;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: teal;
+  }
+  20% {
+    background-color: gold;
+  }
+  40% {
+    background-color: indianred;
+  }
+  60% {
+    background-color: violet;
+  }
+  80% {
+    background-color: green;
+  }
+  100% {
+    background-color: teal;
+  }
+} */
+
 .cloud {
   background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
   background-size: auto 100%;
@@ -17,7 +44,7 @@ body {
   position: relative;
   width: 500px;
   height: 100px;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
   left: 0px;
   top: 200px;
 }
@@ -26,8 +53,18 @@ body {
   background-image: url("https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  left: calc(50% - 140px);
   width: 280px;
   height: 400px;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.grass {
+  width: 100%;
+  height: 50px;
+  background-color: #91D899;
+  position: absolute;
+  bottom: 0px;
 }
