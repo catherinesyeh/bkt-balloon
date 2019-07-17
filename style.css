@@ -16,33 +16,6 @@ h4 {
    line-height: 1.5em;
 }
 
-/*  cool color changing code */
-
-/* body {
-animation: 10000ms ease-in-out infinite color-change;
-}
-
-@keyframes color-change {
-0% {
-background-color: teal;
-}
-20% {
-background-color: gold;
-}
-40% {
-background-color: indianred;
-}
-60% {
-background-color: violet;
-}
-80% {
-background-color: green;
-}
-100% {
-background-color: teal;
-}
-} */
-
 .header {
    position: absolute;
    z-index: 10;
@@ -212,10 +185,37 @@ background-color: teal;
    z-index: 10;
 }
 
+.water {
+  width: 100%;
+  height: 60px;
+  animation: 20000ms ease-in-out infinite color-change;
+  position: absolute;
+  bottom: 0px;
+}
+
 .grass {
    width: 100%;
-   height: 50px;
+   height: 40px;
    background-color: #91D899;
    position: absolute;
    bottom: 0px;
+}
+
+/*  cool color changing code */
+@keyframes color-change {
+  0%, 100% {
+    background-color: #4B85CE;
+  }
+  20% {
+    background-color: #4BA8CE;
+  }
+  40% {
+    background-color: #4BBECE;
+  }
+  60% {
+    background-color: #4BCEBE;
+  }
+  80% {
+    background-color: #36EAD4;
+  }
 }
