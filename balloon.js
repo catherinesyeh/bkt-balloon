@@ -1,35 +1,10 @@
 var balloon = document.getElementById("balloon");
-init();
+// init();
 
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
 drift(cloud1, 0, 400, 100);
 drift(cloud2, 0, -400, -100);
-
-function init() {
-  balloon.style.bottom = "20px";
-}
-
-function move(event) {
-  var key = event.which || event.keyCode;
-
-  switch(key) {
-    case 38: // up arrow key
-      moveUp();
-      break;
-    case 40: // down arrow key
-      moveDown();
-      break;
-  }
-}
-
-function moveUp() {
-  balloon.style.bottom = parseInt(balloon.style.bottom) + 5 + "px";
-}
-
-function moveDown() {
-  balloon.style.bottom = parseInt(balloon.style.bottom) - 5 + "px";
-}
 
 function drift(cloud, start, max, dir) {
   setInterval(frame, 2000);
@@ -76,12 +51,13 @@ function reset() {
    g.value = g.defaultValue;
    updateG(g.defaultValue);
 }
-
 // update slider values
 // P(init)
 function updateI(val) {
    document.getElementById("demoI").innerHTML = val;
    updateProbs();
+   var height = Math.max(window.innerHeight, document.body.clientHeight) * 0.75;
+   balloon.style.bottom = (val * height) + "px";
 }
 
 // P(trans)
@@ -125,4 +101,33 @@ function updateProbs() {
    var learnW =  w + (1.0 - w) * t,
        wro = document.getElementById("wrong");
    wro.innerHTML = learnW;
+
+   // check if mastery achieved
+   if (i >= 0.95) {
+      mastered();
+   }
+}
+
+// display message upon mastery (P(L) >= 0.95)
+function mastered() {
+   // Get the modal
+   var modal = document.getElementById("myModal");
+
+   // Get the <span> element that closes the modal
+   var span = document.getElementsByClassName("close")[0];
+
+   // Display pop-up
+   modal.style.display = "block";
+
+   // When the user clicks on <span> (x), close the modal
+   span.onclick = function() {
+      modal.style.display = "none";
+   }
+
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+      if (event.target == modal) {
+         modal.style.display = "none";
+      }
+   }
 }
