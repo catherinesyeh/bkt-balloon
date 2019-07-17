@@ -211,13 +211,13 @@ h4 {
 
 @keyframes light-waves {
     0%, 100% {
-      height: 100px;
+      height: 90px;
     }
     25% {
-      height: 105px;
+      height: 85px;
     }
     50% {
-      height: 100px;
+      height: 90px;
     }
     75% {
       height: 95px;
@@ -235,16 +235,16 @@ h4 {
 
 @keyframes dark-waves {
     0%, 100% {
-      height: 100px;
+      height: 90px;
     }
     25% {
       height: 95px;
     }
     50% {
-      height: 100px;
+      height: 90px;
     }
     75% {
-      height: 105px;
+      height: 85px;
     }
 }
 
