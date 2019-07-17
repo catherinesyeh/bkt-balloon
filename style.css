@@ -185,7 +185,7 @@ h4 {
    z-index: 10;
 }
 
-.water {
+/* .water {
   width: 100%;
   animation: 10000ms ease-in-out infinite color-change;
   position: absolute;
@@ -198,10 +198,58 @@ h4 {
    background-color: #91D899;
    position: absolute;
    bottom: 0px;
+} */
+
+.lightwaves {
+  width: 100%;
+  background-image: url("https://1.bp.blogspot.com/-Y9nxomGJg7E/XS9m6_gxz0I/AAAAAAAAYhc/8989RCDN74MB2ecfhXvsra_GIbyMKJZKgCLcBGAs/s1600/light.png");
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
+  animation: 10000ms ease-in-out infinite light-waves;
+}
+
+@keyframes light-waves {
+    0%, 100% {
+      height: 100px;
+    }
+    25% {
+      height: 105px;
+    }
+    50% {
+      height: 100px;
+    }
+    75% {
+      height: 95px;
+    }
+}
+
+.darkwaves {
+  width: 100%;
+  background-image: url("https://1.bp.blogspot.com/-cB45WybFPRU/XS9m69f803I/AAAAAAAAYhY/nqKGWErCB4QrK7LbKGdCIVAiMbIC7H0RgCLcBGAs/s1600/dark.png");
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
+  animation: 10000ms ease-in-out infinite dark-waves;
+}
+
+@keyframes dark-waves {
+    0%, 100% {
+      height: 100px;
+    }
+    25% {
+      height: 95px;
+    }
+    50% {
+      height: 100px;
+    }
+    75% {
+      height: 105px;
+    }
 }
 
 /*  cool color changing code */
-@keyframes color-change {
+/* @keyframes color-change {
   0%, 100% {
     background-color: #4B85CE;
     height: 55px;
@@ -218,4 +266,4 @@ h4 {
     background-color: #4BCEBE;
     height: 50px;
   }
-}
+} */
