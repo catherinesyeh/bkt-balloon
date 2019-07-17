@@ -13,6 +13,7 @@ body {
 
 h4 {
    font-weight: normal;
+   line-height: 1.5em;
 }
 
 /*  cool color changing code */
@@ -187,7 +188,6 @@ background-color: teal;
 }
 
 .cloud {
-   display: none;
    background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
    background-size: auto 100%;
    background-repeat: no-repeat;
