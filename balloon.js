@@ -1,5 +1,4 @@
 var balloon = document.getElementById("balloon");
-// init();
 
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
@@ -70,34 +69,37 @@ function updateI(val) {
 function updateT(val) {
    document.getElementById("demoT").innerHTML = val;
    updateProbs();
-   
-   // deal with clouds
-   if (val < 0.25) {
-      cloud1.style.display = "none";
-      cloud2.style.display = "none";
-      cloud3.style.display = "none";
-      cloud4.style.display = "none";
-   } else if (val < 0.5) {
-      cloud1.style.display = "block";
-      cloud2.style.display = "none";
-      cloud3.style.display = "none";
-      cloud4.style.display = "none";
-   } else if (val < 0.75) {
-      cloud1.style.display = "block";
-      cloud2.style.display = "block";
-      cloud3.style.display = "none";
-      cloud4.style.display = "none";
-   } else if (val < 1) {
-      cloud1.style.display = "block";
-      cloud2.style.display = "block";
-      cloud3.style.display = "block";
-      cloud4.style.display = "none";
-   } else { // val === 1
-      cloud1.style.display = "block";
-      cloud2.style.display = "block";
-      cloud3.style.display = "block";
-      cloud4.style.display = "block";
-   }
+   adjustClouds(val);
+}
+
+// deal with clouds
+function adjustClouds(val) {
+  if (val < 0.25) {
+     cloud1.style.display = "none";
+     cloud2.style.display = "none";
+     cloud3.style.display = "none";
+     cloud4.style.display = "none";
+  } else if (val < 0.5) {
+     cloud1.style.display = "block";
+     cloud2.style.display = "none";
+     cloud3.style.display = "none";
+     cloud4.style.display = "none";
+  } else if (val < 0.75) {
+     cloud1.style.display = "block";
+     cloud2.style.display = "block";
+     cloud3.style.display = "none";
+     cloud4.style.display = "none";
+  } else if (val < 1) {
+     cloud1.style.display = "block";
+     cloud2.style.display = "block";
+     cloud3.style.display = "block";
+     cloud4.style.display = "none";
+  } else { // val === 1
+     cloud1.style.display = "block";
+     cloud2.style.display = "block";
+     cloud3.style.display = "block";
+     cloud4.style.display = "block";
+  }
 }
 
 // P(slip)
@@ -135,6 +137,12 @@ function updateProbs() {
    var learnW =  w + (1.0 - w) * t,
        wro = document.getElementById("wrong");
    wro.innerHTML = learnW;
+
+   if (learnW > learnC) {
+     balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-sWdg21Ajl-8/XS9EMLAp77I/AAAAAAAAYgw/D2RDgtOR39wjpnR9V_1BUxrA3uHI_SVogCLcBGAs/s1600/upsidedown.png')";
+   } else {
+     balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png')";
+   }
 
    // check if mastery achieved
    if (i >= 0.95) {
