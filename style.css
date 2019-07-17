@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    font-family: Arial !important;
 }
 
 body {
@@ -8,6 +9,10 @@ body {
     margin: 0;
     background: linear-gradient(to top, #FC9243, #FFC133 10%, #FFF999, #BFEDFF 75%);
     background-repeat: no-repeat;
+}
+
+h4 {
+   font-weight: normal;
 }
 
 /*  cool color changing code */
@@ -36,6 +41,90 @@ body {
     background-color: teal;
   }
 } */
+
+.header {
+   position: absolute;
+   left: 10px;
+}
+
+.button {
+   position: absolute;
+   background: #000;
+   opacity: 0.7;
+   border: none;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   padding: 15px 30px;
+   text-align: center;
+   font-size: 14px;
+   cursor: pointer;
+   outline: none;
+}
+
+.reset {
+   position: absolute;
+   background: none;
+   opacity: 0.7;
+   border: none;
+   color: #000;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   font-size: 18px;
+   cursor: pointer;
+   outline: none;
+   right: 0;
+   top: 20px;
+}
+
+.button:hover,
+.reset:hover {
+   opacity: 1;
+   outline: none;
+}
+
+/* sliders */
+.slidecontainer {
+   width: 500px;
+   position: absolute;
+   z-index: 10;
+   top: 150px;
+   left: 10px;
+}
+
+.slider {
+   -webkit-appearance: none;
+   width: 100%;
+   height: 15px;
+   background-image: linear-gradient(to right, #a8e1ff, #9dede9);
+   outline: none;
+   opacity: 0.7;
+   -webkit-transition: .2s;
+   transition: opacity .2s;
+}
+
+.slider:hover {
+   opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 15px;
+   height: 15px;
+   outline: none;
+   background: #000;
+   cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+   width: 15px;
+   height: 15px;
+   outline: none;
+   background: #000;
+   cursor: pointer;
+}
 
 .cloud {
   background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
