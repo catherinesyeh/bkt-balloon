@@ -1,14 +1,14 @@
 html {
-    height: 100%;
-    font-family: Arial !important;
+   height: 100%;
+   font-family: Arial !important;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background: linear-gradient(to top, #FC9243, #FFC133 10%, #FFF999, #BFEDFF 75%);
-    background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   background: linear-gradient(to top, #FC9243, #FFC133 10%, #FFF999, #BFEDFF 75%);
+   background-repeat: no-repeat;
 }
 
 h4 {
@@ -18,32 +18,33 @@ h4 {
 /*  cool color changing code */
 
 /* body {
-  animation: 10000ms ease-in-out infinite color-change;
+animation: 10000ms ease-in-out infinite color-change;
 }
 
 @keyframes color-change {
-  0% {
-    background-color: teal;
-  }
-  20% {
-    background-color: gold;
-  }
-  40% {
-    background-color: indianred;
-  }
-  60% {
-    background-color: violet;
-  }
-  80% {
-    background-color: green;
-  }
-  100% {
-    background-color: teal;
-  }
+0% {
+background-color: teal;
+}
+20% {
+background-color: gold;
+}
+40% {
+background-color: indianred;
+}
+60% {
+background-color: violet;
+}
+80% {
+background-color: green;
+}
+100% {
+background-color: teal;
+}
 } */
 
 .header {
    position: absolute;
+   z-index: 10;
    left: 10px;
 }
 
@@ -186,33 +187,35 @@ h4 {
 }
 
 .cloud {
-  background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  position: relative;
-  width: 500px;
-  height: 100px;
-  transition: 0.3s ease-in-out;
-  left: 0px;
-  top: 200px;
+   display: none;
+   background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
+   background-size: auto 100%;
+   background-repeat: no-repeat;
+   position: relative;
+   z-index: 0;
+   width: 500px;
+   height: 100px;
+   transition: 0.3s ease-in-out;
+   left: 0px;
+   top: 200px;
 }
 
 .balloon {
-  background-image: url("https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: calc(50% - 140px);
-  width: 280px;
-  height: 400px;
-  transition: 0.3s ease-in-out;
-  z-index: 10;
+   background-image: url("https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png");
+   background-size: auto 100%;
+   background-repeat: no-repeat;
+   position: absolute;
+   left: calc(50% - 140px);
+   width: 280px;
+   height: 400px;
+   transition: 0.3s ease-in-out;
+   z-index: 10;
 }
 
 .grass {
-  width: 100%;
-  height: 50px;
-  background-color: #91D899;
-  position: absolute;
-  bottom: 0px;
+   width: 100%;
+   height: 50px;
+   background-color: #91D899;
+   position: absolute;
+   bottom: 0px;
 }

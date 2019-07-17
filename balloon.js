@@ -3,8 +3,12 @@ var balloon = document.getElementById("balloon");
 
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
+var cloud3 = document.getElementById("cloud3");
+var cloud4 = document.getElementById("cloud4");
 drift(cloud1, 0, 400, 100);
 drift(cloud2, 0, -400, -100);
+drift(cloud3, 0, 300, 50);
+drift(cloud4, 0, -300, -50);
 
 function drift(cloud, start, max, dir) {
   setInterval(frame, 2000);
@@ -16,7 +20,7 @@ function drift(cloud, start, max, dir) {
   function frame() {
     if (pos === end) {
       direction *= -1; // reverse direction
-      end = (cloud === cloud2 && end === 0) ?
+      end = ((cloud === cloud2 || cloud === cloud4) && end === 0) ?
         maxDist - end :
         Math.abs(maxDist - end);
     }
@@ -56,6 +60,8 @@ function reset() {
 function updateI(val) {
    document.getElementById("demoI").innerHTML = val;
    updateProbs();
+
+   // change balloon position
    var height = Math.max(window.innerHeight, document.body.clientHeight) * 0.75;
    balloon.style.bottom = (val * height) + "px";
 }
@@ -64,6 +70,34 @@ function updateI(val) {
 function updateT(val) {
    document.getElementById("demoT").innerHTML = val;
    updateProbs();
+   
+   // deal with clouds
+   if (val < 0.25) {
+      cloud1.style.display = "none";
+      cloud2.style.display = "none";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+   } else if (val < 0.5) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "none";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+   } else if (val < 0.75) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+   } else if (val < 1) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "block";
+      cloud4.style.display = "none";
+   } else { // val === 1
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "block";
+      cloud4.style.display = "block";
+   }
 }
 
 // P(slip)
