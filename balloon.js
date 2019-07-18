@@ -1,3 +1,4 @@
+var gameHeight = document.getElementById("game").clientHeight * 0.75;
 var balloon = document.getElementById("balloon");
 
 var cloud1 = document.getElementById("cloud1");
@@ -61,8 +62,7 @@ function updateI(val) {
    updateProbs();
 
    // change balloon position
-   var height = Math.max(window.innerHeight, document.body.clientHeight) * 0.75;
-   balloon.style.bottom = (val * height) + "px";
+   balloon.style.bottom = (val * gameHeight) + "px";
 }
 
 // P(trans)
@@ -131,6 +131,12 @@ function adjustClouds(val) {
       cloud3.style.display = "none";
       cloud4.style.display = "none";
    }
+}
+
+// show additional info for prompt
+function showMore(b, id) {
+   id.classList.toggle("extra");
+   b.value = (b.value === "More" ? "Less" : "More");
 }
 
 // P(slip)
