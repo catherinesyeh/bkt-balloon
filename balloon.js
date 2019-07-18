@@ -10,22 +10,22 @@ drift(cloud3, 0, 300, 50);
 drift(cloud4, 0, -300, -50);
 
 function drift(cloud, start, max, dir) {
-  setInterval(frame, 2000);
-  var maxDist = max,
-      pos = start,
-      end = maxDist,
-      direction = dir;
+   setInterval(frame, 2000);
+   var maxDist = max,
+   pos = start,
+   end = maxDist,
+   direction = dir;
 
-  function frame() {
-    if (pos === end) {
-      direction *= -1; // reverse direction
-      end = ((cloud === cloud2 || cloud === cloud4) && end === 0) ?
-        maxDist - end :
-        Math.abs(maxDist - end);
-    }
-    pos += direction;
-    cloud.style.left = pos + "px";
-  }
+   function frame() {
+      if (pos === end) {
+         direction *= -1; // reverse direction
+         end = ((cloud === cloud2 || cloud === cloud4) && end === 0) ?
+         maxDist - end :
+         Math.abs(maxDist - end);
+      }
+      pos += direction;
+      cloud.style.left = pos + "px";
+   }
 }
 
 // change P(init)
@@ -74,32 +74,63 @@ function updateT(val) {
 
 // deal with clouds
 function adjustClouds(val) {
-  if (val < 0.25) {
-     cloud1.style.display = "none";
-     cloud2.style.display = "none";
-     cloud3.style.display = "none";
-     cloud4.style.display = "none";
-  } else if (val < 0.5) {
-     cloud1.style.display = "block";
-     cloud2.style.display = "none";
-     cloud3.style.display = "none";
-     cloud4.style.display = "none";
-  } else if (val < 0.75) {
-     cloud1.style.display = "block";
-     cloud2.style.display = "block";
-     cloud3.style.display = "none";
-     cloud4.style.display = "none";
-  } else if (val < 1) {
-     cloud1.style.display = "block";
-     cloud2.style.display = "block";
-     cloud3.style.display = "block";
-     cloud4.style.display = "none";
-  } else { // val === 1
-     cloud1.style.display = "block";
-     cloud2.style.display = "block";
-     cloud3.style.display = "block";
-     cloud4.style.display = "block";
-  }
+   if (val < 0.15) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "block";
+      cloud4.style.display = "block";
+      cloud1.style.filter = "brightness(25%)";
+      cloud2.style.filter = "brightness(25%)";
+      cloud3.style.filter = "brightness(25%)";
+      cloud4.style.filter = "brightness(25%)";
+   } else if (val < 0.3) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "block";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(25%)";
+      cloud2.style.filter = "brightness(25%)";
+      cloud3.style.filter = "brightness(25%)";
+   } else if (val < 0.4) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "block";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(50%)";
+      cloud2.style.filter = "brightness(50%)";
+      cloud3.style.filter = "brightness(50%)";
+   } else if (val < 0.55) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(50%)";
+      cloud2.style.filter = "brightness(50%)";
+   } else if (val < 0.7) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "block";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(75%)";
+      cloud2.style.filter = "brightness(75%)";
+   } else if (val < 0.8) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "none";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(75%)";
+   } else if (val < 0.95) {
+      cloud1.style.display = "block";
+      cloud2.style.display = "none";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+      cloud1.style.filter = "brightness(100%)";
+   } else { // val <= 1
+      cloud1.style.display = "none";
+      cloud2.style.display = "none";
+      cloud3.style.display = "none";
+      cloud4.style.display = "none";
+   }
 }
 
 // P(slip)
@@ -118,30 +149,30 @@ function updateG(val) {
 function updateProbs() {
    // get the parameter values
    var i = document.getElementById("init").value,
-       i_c = 1.0 - i,
-       t = document.getElementById("trans").value,
-       t_c = 1.0 - t,
-       s = document.getElementById("slip").value,
-       s_c = 1.0 - s,
-       g = document.getElementById("guess").value,
-       g_c = 1.0 - g;
+   i_c = 1.0 - i,
+   t = document.getElementById("trans").value,
+   t_c = 1.0 - t,
+   s = document.getElementById("slip").value,
+   s_c = 1.0 - s,
+   g = document.getElementById("guess").value,
+   g_c = 1.0 - g;
 
    // conditional probabilities
    var r = (i * s_c) / (i * s_c + i_c * g),
-       w = (i * s) / (i * s + i_c * g_c);
+   w = (i * s) / (i * s + i_c * g_c);
 
    var learnC = r + (1.0 - r) * t,
-       cor = document.getElementById("correct");
+   cor = document.getElementById("correct");
    cor.innerHTML = learnC;
 
    var learnW =  w + (1.0 - w) * t,
-       wro = document.getElementById("wrong");
+   wro = document.getElementById("wrong");
    wro.innerHTML = learnW;
 
    if (learnW > learnC) {
-     balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-sWdg21Ajl-8/XS9EMLAp77I/AAAAAAAAYgw/D2RDgtOR39wjpnR9V_1BUxrA3uHI_SVogCLcBGAs/s1600/upsidedown.png')";
+      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-sWdg21Ajl-8/XS9EMLAp77I/AAAAAAAAYgw/D2RDgtOR39wjpnR9V_1BUxrA3uHI_SVogCLcBGAs/s1600/upsidedown.png')";
    } else {
-     balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png')";
+      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png')";
    }
 
    // check if mastery achieved
