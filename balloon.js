@@ -18,6 +18,7 @@ drift(cloud2, 0, -400, -100);
 drift(cloud3, 0, 300, 50);
 drift(cloud4, 0, -300, -50);
 
+// move clouds side to side
 function drift(cloud, start, max, dir) {
    setInterval(frame, 2000);
    var maxDist = max,
@@ -29,8 +30,8 @@ function drift(cloud, start, max, dir) {
       if (pos === end) {
          direction *= -1; // reverse direction
          end = ((cloud === cloud2 || cloud === cloud4) && end === 0) ?
-         maxDist - end :
-         Math.abs(maxDist - end);
+            maxDist - end :
+            Math.abs(maxDist - end);
       }
       pos += direction;
       cloud.style.left = pos + "px";
@@ -185,9 +186,9 @@ function updateProbs() {
    wro.innerHTML = learnW;
 
    if (learnW > learnC) {
-      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-sWdg21Ajl-8/XS9EMLAp77I/AAAAAAAAYgw/D2RDgtOR39wjpnR9V_1BUxrA3uHI_SVogCLcBGAs/s1600/upsidedown.png')";
+      balloon.style.backgroundImage = "url('images/upsidedown.png')";
    } else {
-      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png')";
+      balloon.style.backgroundImage = "url('images/balloon.png')";
    }
 
    // check if mastery achieved

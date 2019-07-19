@@ -57,7 +57,7 @@ li {
 .intro {
   width: 100%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 150px;
   padding-bottom: 100px;
   background-color: rgba(255,255,255,.5);
 }
@@ -79,12 +79,73 @@ li {
    padding-top: 25px;
 }
 
+/* mini balloons */
 .mini {
+   position: absolute;
+   top: -50px;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   height: auto;
+}
+
+.balloon-box {
+   margin-left: auto;
+   margin-right: auto;
+   width: 100px;
+   height: 200px;
+}
+
+.mini-left {
   display: block;
   width: 100px;
   height: auto;
-  margin-left: 100px;
   position: absolute;
+}
+
+.mini-right {
+  display: block;
+  width: 100px;
+  height: auto;
+  position: absolute;
+}
+
+#mini1, #mini3 {
+   animation: 5000ms ease-in-out infinite bop-up;
+}
+
+#mini2, #mini4 {
+   animation: 5000ms ease-in-out infinite bop-down;
+}
+
+@keyframes bop-up {
+   0%, 100% {
+      padding-top: 10px;
+   }
+   25% {
+      padding-top: 20px;
+   }
+   50% {
+      padding-top: 10px;
+   }
+   75% {
+      padding-top: 0px;
+   }
+}
+
+@keyframes bop-down {
+   0%, 100% {
+      padding-top: 10px;
+   }
+   25% {
+      padding-top: 0px;
+   }
+   50% {
+      padding-top: 10px;
+   }
+   75% {
+      padding-top: 20px;
+   }
 }
 
 .info {
@@ -288,7 +349,7 @@ li {
 }
 
 .cloud {
-  background-image: url("https://1.bp.blogspot.com/-LdqHr3Z-E9o/XS3u4_qKlyI/AAAAAAAAYd0/AZBSisrEK14vcKey2nAMErue3zRwEqmkgCLcBGAs/s1600/cloud.png");
+  background-image: url("images/cloud.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   position: relative;
@@ -298,10 +359,12 @@ li {
   transition: 0.3s ease-in-out;
   left: 0px;
   top: 200px;
+  filter: brightness(50%);
+  display: none;
 }
 
 .balloon {
-  background-image: url("https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png");
+  background-image: url("images/balloon.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -314,7 +377,7 @@ li {
 
 .lightwaves {
   width: 100%;
-  background-image: url("https://1.bp.blogspot.com/-Y9nxomGJg7E/XS9m6_gxz0I/AAAAAAAAYhc/8989RCDN74MB2ecfhXvsra_GIbyMKJZKgCLcBGAs/s1600/light.png");
+  background-image: url("images/light-small.png");
   background-size: cover;
   position: absolute;
   bottom: 0px;
@@ -338,7 +401,7 @@ li {
 
 .darkwaves {
   width: 100%;
-  background-image: url("https://1.bp.blogspot.com/-cB45WybFPRU/XS9m69f803I/AAAAAAAAYhY/nqKGWErCB4QrK7LbKGdCIVAiMbIC7H0RgCLcBGAs/s1600/dark.png");
+  background-image: url("images/dark-small.png");
   background-size: cover;
   position: absolute;
   bottom: 0px;
