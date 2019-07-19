@@ -8,10 +8,6 @@ windowHeight < gameHeight ?
   height = windowHeight - 0.5 * balloon.clientHeight :
   height = gameHeight - 0.5 * balloon.clientHeight;
 
-console.log("Game height: " + gameHeight);
-console.log("Window height: " + windowHeight);
-console.log("Height: " + height);
-
 // clouds
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
