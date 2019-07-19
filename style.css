@@ -303,7 +303,7 @@ li {
 }
 
 .balloon {
-  background-image: url("https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png");
+  background-image: url("images/balloon.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -316,7 +316,7 @@ li {
 
 .lightwaves {
   width: 100%;
-  background-image: url("https://1.bp.blogspot.com/-Y9nxomGJg7E/XS9m6_gxz0I/AAAAAAAAYhc/8989RCDN74MB2ecfhXvsra_GIbyMKJZKgCLcBGAs/s1600/light.png");
+  background-image: url("images/light.png");
   background-size: cover;
   position: absolute;
   bottom: 0px;
@@ -340,7 +340,7 @@ li {
 
 .darkwaves {
   width: 100%;
-  background-image: url("https://1.bp.blogspot.com/-cB45WybFPRU/XS9m69f803I/AAAAAAAAYhY/nqKGWErCB4QrK7LbKGdCIVAiMbIC7H0RgCLcBGAs/s1600/dark.png");
+  background-image: url("images/dark.png");
   background-size: cover;
   position: absolute;
   bottom: 0px;
