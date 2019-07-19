@@ -70,13 +70,23 @@ li {
   font-size: 20px;
 }
 
+.begin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: -50px;
+}
+
 .arrow {
    display: block;
    margin-left: auto;
    margin-right: auto;
-   padding-top: 20px;
    width: 24px;
    height: auto;
+   padding-top: 20px;
 }
 
 .info {
@@ -223,7 +233,6 @@ li {
   z-index: 10;
   top: 200px;
   right: 50px;
-  padding-bottom: 50px;
 }
 
 .slider {
@@ -275,7 +284,7 @@ li {
 /* interactive */
 .game {
   position: relative;
-  height: 900px;
+  height: 100%;
   width: 100%;
 }
 
