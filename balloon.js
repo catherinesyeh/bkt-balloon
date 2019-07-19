@@ -1,6 +1,18 @@
 var balloon = document.getElementById("balloon");
-var gameHeight = document.getElementById("game").clientHeight - 0.5 * balloon.clientHeight;
 
+// set height of game
+var gameHeight = document.getElementById("game").clientHeight;
+var windowHeight = window.innerHeight;
+var height;
+windowHeight < gameHeight ?
+  height = windowHeight - 0.5 * balloon.clientHeight :
+  height = gameHeight - 0.5 * balloon.clientHeight;
+
+console.log("Game height: " + gameHeight);
+console.log("Window height: " + windowHeight);
+console.log("Height: " + height);
+
+// clouds
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
 var cloud3 = document.getElementById("cloud3");
@@ -55,6 +67,7 @@ function reset() {
    g.value = g.defaultValue;
    updateG(g.defaultValue);
 }
+
 // update slider values
 // P(init)
 function updateI(val) {
@@ -62,7 +75,7 @@ function updateI(val) {
    updateProbs();
 
    // change balloon position
-   balloon.style.bottom = (val * gameHeight) + "px";
+   balloon.style.bottom = (val * height) + "px";
 }
 
 // P(trans)
