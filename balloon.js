@@ -176,9 +176,9 @@ function updateProbs() {
    wro.innerHTML = learnW;
 
    if (learnW > learnC) {
-      balloon.style.backgroundImage = "url('images/upsidedown.png')";
+      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-sWdg21Ajl-8/XS9EMLAp77I/AAAAAAAAYgw/D2RDgtOR39wjpnR9V_1BUxrA3uHI_SVogCLcBGAs/s1600/upsidedown.png')";
    } else {
-      balloon.style.backgroundImage = "url('images/balloon.png')";
+      balloon.style.backgroundImage = "url('https://1.bp.blogspot.com/-BlBdyABWOp0/XS3mvkH8g7I/AAAAAAAAYdo/qgfVIgLeegYtEfyoykKWM78g7p0kw2oYwCLcBGAs/s1600/balloon.png')";
    }
 
    // check if mastery achieved
