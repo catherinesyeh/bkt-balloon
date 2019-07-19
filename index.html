@@ -26,7 +26,7 @@
             There are four parameters involved in BKT (each with a value between 0 and 1, inclusive):
             <ul>
               <li>
-                <b style="color:#A98666">P(knew):</b>
+                <b style="color:#A98666">P(known):</b>
                 the probability that the student already knew a skill.
               </li>
               <li>
@@ -49,7 +49,7 @@
             <input type="button" class="more" value="See the math" onclick="showMore(this, more1)" />
             <div class="extra" id="more1">
                <br />
-               Basically, we first compute the conditional probability that the student
+               First, we compute the conditional probability that the student
                learned the skill previously (at time <i>n-1</i>), based on whether
                they answered the current question (at time <i>n</i>) correctly or incorrectly.
                <br />
@@ -61,11 +61,11 @@
                conditional probability that the student has learned the skill now
                (at time <i>n</i>).
                <br />
-               <img class="formula" src="images/p-learned.png" style="width:800px">
+               <img class="formula" src="images/p-learned.png" style="width:820px;margin-bottom:-20px;">
             </div>
             <br /><br />
-            For the next question, we use <b>P(learned)</b> as the new value of <b>P(starting-knowledge)</b>.
-            Once <b>P(starting-knowledge)</b> ≥ 0.95, we say the user has achieved
+            For the next question, we use <b>P(learned)</b> as the new value of <b>P(known)</b>.
+            Once <b>P(known)</b> ≥ 0.95, we say the user has achieved
             <b><i style="color:#A98666">m</i>
             <i style="color:#A57380">a</i>
             <i style="color:#736C9B">s</i>
@@ -98,7 +98,7 @@
             <input type="button" class="reset" id="res" value="Reset" onclick="reset()" />
 
             <!-- init -->
-            <h3>P(knew): <span id="demoI"></span></h3>
+            <h3>P(known): <span id="demoI"></span></h3>
             <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider"
                    style="background-image: linear-gradient(to right, #f0c297, #fccfcf)" id="init" oninput="updateI(this.value)" />
 
@@ -120,7 +120,7 @@
             <!-- probabilities -->
             <h4 style="padding-bottom:0;">
                Remember, <b>P(learned)</b> depends on whether the student answers correctly
-               and this probability becomes the new value for <b>P(knew)</b>.
+               and this probability becomes the new value for <b>P(known)</b>.
                Simulate student responses by choosing an answer button below.
             </h4>
 
