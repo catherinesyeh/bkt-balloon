@@ -1,5 +1,5 @@
-var gameHeight = document.getElementById("game").clientHeight * 0.75;
 var balloon = document.getElementById("balloon");
+var gameHeight = document.getElementById("game").clientHeight - 0.5 * balloon.clientHeight;
 
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
