@@ -18,11 +18,11 @@
         <center><h1>Introduction to Bayesian Knowledge Tracing</h1></center>
       <center><div class="description">
           <h4>
-            <b>Bayesian Knowledge Tracing</b>, or <b>BKT</b>, is an artificial-intelligence
+            <b>Bayesian Knowledge Tracing</b>, or <b>BKT</b>, is an artificial intelligence
             algorithm that lets us infer a student's current knowledge state to
             predict if they have learned a skill.
             <br /><br />
-            There are four parameters involved in BKT:
+            There are four parameters involved in BKT (each with a value between 0 and 1, inclusive):
             <ul>
               <li>
                 <b style="color:#A98666">P(knew):</b>
@@ -45,23 +45,46 @@
             <b>P(learned)</b>, the probability that the student has learned the skill
             they are working on, using the values of these parameters.
             The formula for <b>P(learned)</b> depends on whether their response was correct.
-            <input type="button" class="more" value="More" onclick="showMore(this, more1)" />
+            <input type="button" class="more" value="See the math" onclick="showMore(this, more1)" />
             <div class="extra" id="more1">
-              Test
+               <br />
+               Basically, we first compute the conditional probability that the student
+               learned the skill previously (at time <i>n-1</i>), based on whether
+               they answered the current question (at time <i>n</i>) correctly or incorrectly.
+               <br />
+               <img class="formula" src="images/right-formula.png">
+               <br />
+               <img class="formula" src="images/wrong-formula.png">
+               <br /><br />
+               Then, we use the result of our first calculation to compute the
+               conditional probability that the student has learned the skill now
+               (at time <i>n</i>).
+               <br />
+               <img class="formula" src="images/p-learned.png" style="width:800px">
             </div>
             <br /><br />
             For the next question, we use <b>P(learned)</b> as the new value of <b>P(starting-knowledge)</b>.
-            Once <b>P(starting-knowledge)</b> ≥ 0.95, we say the user has achieved <em>mastery</em>.
+            Once <b>P(starting-knowledge)</b> ≥ 0.95, we say the user has achieved
+            <b><i style="color:#A98666">m</i>
+            <i style="color:#A57380">a</i>
+            <i style="color:#736C9B">s</i>
+            <i style="color:#7499AD">t</i>
+            <i style="color:#736C9B">e</i>
+            <i style="color:#A57380">r</i>
+            <i style="color:#A98666">y</i></b>.
             <br /><br />
             Now that you’ve had a chance to learn about the four parameters,
             here’s a tool that can help you explore the relationships between them
             and how exactly each influences the probability calculations underlying BKT.
           </h4>
+          <br />
+          <h2>Let's begin!</h2>
+          <a href="#header"><img class="arrow" src="images/down-arrow.png"></a>
         </div></center>
       </div>
 
       <div class="info">
-         <div class="header">
+         <div class="header" id="header">
             <h1 style="margin-bottom:0;">BKT Probability Simulator</h1>
             <h4 style="margin-top:25px">
                Drag the sliders to adjust the parameters and change the value of <b>P(learned)</b>.
@@ -94,8 +117,8 @@
 
             <!-- probabilities -->
             <h4 style="padding-bottom:0;">
-               P(learned) depends on whether the student answers correctly.
-               This probability becomes the new value for P(init).
+               Remember, <b>P(learned)</b> depends on whether the student answers correctly
+               and this probability becomes the new value for <b>P(init)</b>.
                Simulate student responses by choosing an answer button below.
             </h4>
 
