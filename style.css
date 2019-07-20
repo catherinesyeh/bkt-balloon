@@ -54,6 +54,30 @@ li {
   margin-bottom: 15px;
 }
 
+a {
+   color: #fff;
+}
+
+a:hover {
+   opacity: 0.7;
+
+}
+
+footer {
+   background-image: linear-gradient(to bottom, #4472C4, #072C6D);
+   width: 100%;
+   height: auto;
+}
+
+.references {
+   padding-top: 50px;
+   max-width: 980px;
+   padding-bottom: 50px;
+   display: inline-block;
+   text-align: left;
+   color: #fff;
+}
+
 .intro {
   width: 100%;
   height: auto;
