@@ -88,11 +88,11 @@
           </h4>
           <br />
           <h2>Let's begin!</h2>
-          <a href="#header"><img class="arrow" src="images/down-arrow.png"></a>
+          <a href="#info"><img class="arrow" src="images/down-arrow.png"></a>
         </div></center>
       </div>
 
-      <div class="info">
+      <div class="info" id="info">
          <div class="header" id="header">
             <h1 style="margin-bottom:0;">BKT Probability Simulator</h1>
             <h4 style="margin-top:25px;font-size:18px;">
@@ -125,30 +125,34 @@
                    style="margin-bottom:20px;" />
 
             <!-- probabilities -->
-            <h4 style="padding-bottom:0;font-size:18px">
+            <h4 style="margin-bottom:10px;font-size:18px">
                Remember, <b>P(learned)</b> depends on whether the student answers correctly
                and this probability becomes the new value for <b>P(known)</b>.
                Simulate student responses by choosing an answer button below.
             </h4>
 
             <!-- P(learned if correct) -->
-            <h3 style="margin-bottom:0">P(learned if correct): <span id="correct"></span></h3>
-            <input type="button" class="button" style="position:relative;margin-top:10px;margin-bottom:10px;width:280px"
-                   id="learned1" value="Answer Correct" onclick="changeP(correct, init)" />
+            <div class="left">
+               <h3 style="margin-bottom:0">P(learned if correct): <span id="correct"></span></h3>
+               <input type="button" class="button" id="learned1" value="Answer Correct" onclick="changeP(correct, init)" />
+            </div>
 
             <!-- P(learned if wrong) -->
-            <h3 style="margin-bottom:0">P(learned if wrong): <span id="wrong"></span></h3>
-            <input type="button" class="button" style="position:relative;margin-top:10px;width:280px;"
-                   id="learned2" value="Answer Wrong" onclick="changeP(wrong, init)" />
+            <div class="right">
+               <h3 style="margin-bottom:0">P(learned if wrong): <span id="wrong"></span></h3>
+               <input type="button" class="button" id="learned2" value="Answer Wrong" onclick="changeP(wrong, init)" />
+            </div>
          </div>
       </div>
 
       <!-- game components -->
       <div class="game" id="game">
-         <div class="cloud" id="cloud1"></div>
-         <div class="cloud" id="cloud2" style="float:right;top:350px;"></div>
-         <div class="cloud" id="cloud3" style="top:500px"></div>
-         <div class="cloud" id="cloud4" style="float:right;top:-150px"></div>
+         <div class="clouds">
+            <div class="cloud" id="cloud1"></div>
+            <div class="cloud" id="cloud2" style="float:right;top:315px;"></div>
+            <div class="cloud" id="cloud3" style="top:500px"></div>
+            <div class="cloud" id="cloud4" style="float:right;top:-150px"></div>
+         </div>
          <div class="balloon" id="balloon"></div>
          <div class="lightwaves" id="lightwaves"></div>
          <div class="darkwaves" id="darkwaves"></div>

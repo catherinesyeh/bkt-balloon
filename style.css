@@ -175,6 +175,9 @@ footer {
 .info {
   position: absolute;
   right: 0px;
+  width: 500px;
+  min-height: 900px;
+  height: auto;
 }
 
 .header {
@@ -185,9 +188,23 @@ footer {
   top: 50px;
 }
 
+/* probability buttons */
+.left {
+   position: relative;
+   float: left;
+   left: 0;
+}
+
+.right {
+   position: relative;
+   float: right;
+   right: 0;
+}
+
 .button {
   font-family: Karla;
-  position: absolute;
+  width: 240px !important;
+  position: relative;
   background: #000;
   opacity: 0.7;
   border: none;
@@ -195,6 +212,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 15px 30px;
+  margin-top: 10px;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
@@ -368,7 +386,7 @@ footer {
 .game {
   position: relative;
   height: 100%;
-  min-height: 920px;
+  min-height: 900px;
   width: 100%;
 }
 
@@ -382,7 +400,7 @@ footer {
   height: 100px;
   transition: 0.3s ease-in-out;
   left: 0px;
-  top: 200px;
+  top: 235px;
   filter: brightness(50%);
   display: none;
 }

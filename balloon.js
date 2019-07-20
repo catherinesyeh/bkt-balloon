@@ -2,10 +2,7 @@ var balloon = document.getElementById("balloon");
 
 // set height of game
 var gameHeight = document.getElementById("game").clientHeight;
-var windowHeight = window.innerHeight;
-var height = (windowHeight < gameHeight) ?
-  windowHeight - 0.5 * balloon.clientHeight :
-  gameHeight - 0.5 * balloon.clientHeight;
+var height = gameHeight - 0.5 * balloon.clientHeight;
 
 // clouds
 var cloud1 = document.getElementById("cloud1");
@@ -160,7 +157,7 @@ function updateG(val) {
    updateProbs();
 }
 
-// update P(learned) and P(correct)
+// update P(learned)
 function updateProbs() {
    // get the parameter values
    var i = document.getElementById("init").value,
@@ -178,11 +175,11 @@ function updateProbs() {
 
    var learnC = r + (1.0 - r) * t,
    cor = document.getElementById("correct");
-   cor.innerHTML = learnC;
+   cor.innerHTML = learnC.toFixed(2);
 
    var learnW =  w + (1.0 - w) * t,
    wro = document.getElementById("wrong");
-   wro.innerHTML = learnW;
+   wro.innerHTML = learnW.toFixed(2);
 
    if (learnW > learnC) {
       balloon.style.backgroundImage = "url('images/upsidedown.png')";
