@@ -216,3 +216,14 @@ function mastered() {
       }
    }
 }
+
+// display/hide parameter descriptions
+function displayInfo(p) {
+   console.log(p);
+   p.style.display = "block";
+}
+
+function hideInfo(p) {
+   console.log(p);
+   p.style.display = "none";
+}

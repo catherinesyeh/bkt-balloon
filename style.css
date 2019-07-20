@@ -172,7 +172,7 @@ footer {
    }
 }
 
-.info {
+.explain {
   position: absolute;
   right: 0px;
   width: 500px;
@@ -381,6 +381,23 @@ footer {
    display: block;
    margin: auto;
 }
+
+/* parameter descriptions */
+.info {
+   display: none;
+   position: absolute;
+   padding-left: 135px;
+   z-index: 1;
+   transition: 0.3s;
+   opacity: 0.7;
+   font-style: italic;
+   font-size: 14px;
+}
+
+.des {
+   width: 120px;
+}
+
 
 /* interactive */
 .game {
