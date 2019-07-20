@@ -142,6 +142,12 @@ function adjustClouds(val) {
 // show additional info for prompt
 function showMore(b, id) {
    id.classList.toggle("extra");
+   b.value = (b.value === "More" ? "Less" : "More");
+}
+
+// show formulas
+function showMath(b, id) {
+   id.classList.toggle("extra");
    b.value = (b.value === "See the math" ? "Hide the math" : "See the math");
 }
 
@@ -219,11 +225,9 @@ function mastered() {
 
 // display/hide parameter descriptions
 function displayInfo(p) {
-   console.log(p);
    p.style.display = "block";
 }
 
 function hideInfo(p) {
-   console.log(p);
    p.style.display = "none";
 }

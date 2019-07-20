@@ -55,8 +55,8 @@
             <b>P(learned)</b>, the probability that the student has learned the skill
             they are working on, using the values of these parameters.
             The formula for <b>P(learned)</b> depends on whether their response was correct.
-            <input type="button" class="more" value="See the math" onclick="showMore(this, more1)" />
-            <div class="extra" id="more1">
+            <input type="button" class="math" value="See the math" onclick="showMath(this, math)" />
+            <div class="extra" id="math">
                <br />
                First, we compute the conditional probability that the student
                learned the skill previously (at time <i>n-1</i>), based on whether
@@ -83,8 +83,8 @@
             <i style="color:#A98666">y</i></b>.
             <br /><br />
             Now that you’ve had a chance to learn about the four parameters,
-            here’s a tool that can help you explore the relationships between them
-            and how exactly each influences the probability calculations underlying BKT.
+            here’s a tool that can help you visualize the relationships between them
+            and explore how each one influences the probability calculations underlying BKT.
           </h4>
           <br />
           <h2>Let's begin!</h2>
@@ -92,14 +92,63 @@
         </div></center>
       </div>
 
-      <div class="explain" id="start">
-         <div class="header" id="header">
-            <h1 style="margin-bottom:0;">BKT Probability Simulator</h1>
-            <h4 style="margin-top:25px;font-size:18px;">
-               Drag the sliders to adjust the parameters and help the hot air balloon rise.
-            </h4>
-         </div>
+      <div class="prompt-container">
+        <div class="header" id="header">
+           <h1 style="margin-bottom:0;">BKT Balloon Simulator</h1>
+           <h4 style="margin-top:25px;font-size:18px;">
+              Drag the sliders to adjust the parameters and help the hot air balloon rise.
+              Explore on your own or use the following prompts as a guide.
+           </h4>
+        </div>
+        <div class="prompts">
+          <h4>
+            <ol>
+              <li>
+                Find two parameter combinations that will result in mastery
+                on the next practice opportunity if the student answers correctly
+                (aka. <b>P(learned if correct)</b> ≥ 0.95).
+                Press "answer correct" to verify your results.
+              </li>
+              <input type="button" class="more" value="More" onclick="showMore(this, more1)" />
+              <ul class="extra" id="more1">
+                <li>
+                  Explore what adjustments you have to make depending on <b>P(known)</b>.
+                  Try a higher <b>P(known)</b> and a lower <b>P(known)</b> and compare your results.
+                </li>
+              </ul>
+              <li>
+                What happens to <b>P(learned)</b> if <b>P(guess)</b> and <b>P(slip)</b>
+                stay at 0.5 and you only adjust <b>P(known)</b> and <b>P(will learn)</b>?
+              </li>
+              <input type="button" class="more second" value="More" onclick="showMore(this, more2)" />
+              <ul class="extra" id="more2">
+                <li>
+                  The <b>P(learned)</b> formula differs depending on whether the student answers the question correctly.
+                  However, both formulas result in the same probability if both <b>P(guess)</b> and <b>P(slip)</b> = 0.5.
+                </li>
+              </ul>
+              <li>What happens if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?</li>
+              <input type="button" class="more third" value="More" onclick="showMore(this, more3)" />
+              <ul class="extra" id="more3">
+                <li>
+                  <b>P(learned)</b> is higher if user answers <i>incorrectly</i> vs. <i>correctly</i>.
+                  Typically <b>P(guess)</b> is bounded at 0.3 and <b>P(slip)</b> at 0.1 for this reason.
+                </li>
+                <li>
+                  Does it make sense why the balloon flips now?
+                </li>
+              </ul>
+              <li>Keep exploring! Can you find any other flaws or interesting characteristics of BKT?</li>
+            </ol>
+          </h4>
+        </div>
+      </div>
 
+      <!-- interactive begins -->
+      <div class="explain" id="start">
+        <h4 style="right:50px;top:60px;position:relative;font-style:italic">
+          <b>Hint:</b> hover over the parameters to see how they impact the simulator.
+        </h4>
          <!-- sliders -->
          <div class="slidecontainer">
             <input type="button" class="reset" id="res" value="Reset" onclick="reset()" />
@@ -116,8 +165,8 @@
 
             <!-- trans -->
             <div class="des" onmouseenter="displayInfo(tDes)" onmouseleave="hideInfo(tDes)" style="width:150px">
-               <div class="info" id="tDes" style="padding-left:160px">
-                  Changes the storminess and number of clouds.
+               <div class="info" id="tDes" style="padding-left:160px;margin-top:-5px">
+                  Changes the storminess and number of clouds to represent learning difficulty.
                </div>
                <h3>P(will learn): <span id="demoT"></span></h3>
             </div>

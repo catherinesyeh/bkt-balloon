@@ -78,6 +78,7 @@ footer {
    color: #fff;
 }
 
+/* top stuff */
 .intro {
   width: 100%;
   height: auto;
@@ -171,20 +172,37 @@ footer {
       padding-top: 20px;
    }
 }
+/* prompts */
+.prompt-container {
+  position: absolute;
+  left: 0px;
+  width: 500px;
+  min-height: 860px;
+  height: auto;
+  z-index: 1;
+}
 
+.prompts {
+  position: relative;
+  font-size: 18px;
+  left: 50px;
+  top: 50px;
+}
+
+/* intro to sliders */
 .explain {
   position: absolute;
   right: 0px;
   width: 500px;
-  min-height: 900px;
-  height: auto;
+  min-height: 860px;
+  height: 100%;
 }
 
 .header {
   position: relative;
   z-index: 10;
   width: 500px;
-  right: 50px;
+  left: 50px;
   top: 50px;
 }
 
@@ -201,6 +219,7 @@ footer {
    right: 0;
 }
 
+/* buttons */
 .button {
   font-family: Karla;
   width: 240px !important;
@@ -236,13 +255,33 @@ footer {
   top: 20px;
 }
 
+.more {
+  font-family: Karla;
+  background: #000;
+  opacity: 0.7;
+  border: none;
+  color: #fff;
+   width: 100%;
+   top: 0;
+   margin-bottom: 20px;
+   padding: 12px 15px;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: 14px;
+   cursor: pointer;
+   outline: none;
+   opacity: 0.7;
+}
+
 .button:hover,
-.reset:hover {
+.reset:hover,
+.more:hover {
   opacity: 1;
   outline: none;
 }
 
-.more {
+.math {
   font-family: Karla;
    width: 100%;
    margin-top: 30px;
@@ -260,7 +299,7 @@ footer {
    opacity: 0.7;
 }
 
-.more:hover {
+.math:hover {
    border: none;
    background-image: linear-gradient(to left, #A98666, #A57380, #736C9B, #7499AD);
    padding: 12px 15px;
@@ -332,7 +371,7 @@ footer {
   width: 500px;
   position: absolute;
   z-index: 10;
-  top: 200px;
+  top: 120px;
   right: 50px;
 }
 
@@ -395,7 +434,7 @@ footer {
 }
 
 .des {
-   width: 120px;
+   width: 130px;
 }
 
 
@@ -403,7 +442,7 @@ footer {
 .game {
   position: relative;
   height: 100%;
-  min-height: 900px;
+  min-height: 860px;
   width: 100%;
 }
 
