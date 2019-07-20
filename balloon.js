@@ -2,7 +2,7 @@ var balloon = document.getElementById("balloon");
 
 // set height of game
 var gameHeight = document.getElementById("game").clientHeight;
-var height = gameHeight - 0.5 * balloon.clientHeight;
+var height = gameHeight - balloon.clientHeight;
 
 // clouds
 var cloud1 = document.getElementById("cloud1");

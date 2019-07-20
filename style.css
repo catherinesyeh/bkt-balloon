@@ -177,7 +177,7 @@ footer {
   position: absolute;
   left: 0px;
   width: 500px;
-  min-height: 860px;
+  min-height: 810px;
   height: auto;
   z-index: 1;
 }
@@ -194,8 +194,8 @@ footer {
   position: absolute;
   right: 0px;
   width: 500px;
-  min-height: 860px;
-  height: 100%;
+  min-height: 810px;
+  height: 100%; */
 }
 
 .header {
@@ -442,7 +442,7 @@ footer {
 .game {
   position: relative;
   height: 100%;
-  min-height: 860px;
+  min-height: 810px;
   width: 100%;
 }
 
