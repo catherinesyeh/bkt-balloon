@@ -236,6 +236,7 @@ footer {
   font-size: 14px;
   cursor: pointer;
   outline: none;
+  z-index: 1;
 }
 
 .reset {
