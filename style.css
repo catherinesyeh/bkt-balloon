@@ -177,7 +177,8 @@ footer {
   position: absolute;
   left: 0px;
   width: 30%;
-  min-width: 430px;
+  min-width: 435px;
+  max-width: 500px;
   min-height: 850px;
   height: auto;
   z-index: 1;
@@ -195,7 +196,8 @@ footer {
   position: absolute;
   right: 0px;
   width: 30%;
-  min-width: 430px;
+  min-width: 435px;
+  max-width: 500px;
   min-height: 850px;
   height: 100%; */
 }
@@ -374,7 +376,7 @@ footer {
   width: 100%;
   position: absolute;
   z-index: 10;
-  top: 80px;
+  top: 75px;
   right: 50px;
 }
 
