@@ -210,14 +210,14 @@ footer {
 
 /* probability buttons */
 .left {
-   position: relative;
-   float: left;
+   position: absolute;
+   width: 49%;
    left: 0;
 }
 
 .right {
-   position: relative;
-   float: right;
+   position: absolute;
+   width: 47%;
    right: 0;
 }
 
