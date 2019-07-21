@@ -146,9 +146,7 @@
 
       <!-- interactive begins -->
       <div class="explain" id="start">
-        <h4 style="right:50px;top:60px;position:relative;font-style:italic">
-          <b>Hint:</b> hover over the parameters to see how they impact the simulator.
-        </h4>
+
          <!-- sliders -->
          <div class="slidecontainer">
             <input type="button" class="reset" id="res" value="Reset" onclick="reset()" />
@@ -211,6 +209,9 @@
                <h3 style="margin-bottom:0">P(learned if wrong): <span id="wrong"></span></h3>
                <input type="button" class="button" id="learned2" value="Answer Wrong" onclick="changeP(wrong, init)" />
             </div>
+            <h4 style="right:0px;top:20px;position:relative;font-style:italic">
+              <b>Hint:</b> hover over the parameters to see how they impact the simulator.
+            </h4>
          </div>
       </div>
 
