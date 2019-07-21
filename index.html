@@ -95,12 +95,12 @@
       <div class="prompt-container">
         <div class="header" id="header">
            <h1 style="margin-bottom:0;">BKT Balloon Simulator</h1>
-           <h4 style="margin-top:25px;font-size:18px;">
+           <h4 style="margin-top:25px;font-size:17px;">
               Drag the sliders to adjust the parameters and help the hot air balloon rise.
               Explore on your own or use the following prompts as a guide.
            </h4>
         </div>
-        <div class="prompts">
+        <div class="prompts" id="prompts">
           <h4>
             <ol>
               <li>
@@ -123,11 +123,14 @@
               <input type="button" class="more second" value="More" onclick="showMore(this, more2)" />
               <ul class="extra" id="more2">
                 <li>
-                  The <b>P(learned)</b> formula differs depending on whether the student answers the question correctly.
+                  Usually, the <b>P(learned)</b> formula differs depending on whether the student answers the question correctly.
                   However, both formulas result in the same probability if both <b>P(guess)</b> and <b>P(slip)</b> = 0.5.
                 </li>
               </ul>
-              <li>What happens if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?</li>
+              <li>
+                 What happens to <b>P(learned)</b> if <b>P(guess)</b> and/or <b>P(slip)</b>
+                 exceeds 0.5?
+              </li>
               <input type="button" class="more third" value="More" onclick="showMore(this, more3)" />
               <ul class="extra" id="more3">
                 <li>
@@ -192,7 +195,7 @@
                    style="margin-bottom:20px;" />
 
             <!-- probabilities -->
-            <h4 style="margin-bottom:10px;font-size:18px">
+            <h4 style="margin-bottom:10px;font-size:17px">
                Remember, <b>P(learned)</b> depends on whether the student answers correctly
                and this probability becomes the new value for <b>P(known)</b>.
                Simulate student responses by choosing an answer button below.
