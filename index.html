@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <link rel="icon" href="images/fav.png" type="image/png">
       <link rel="stylesheet" type="text/css" href="style.css">
-      <link href="https://fonts.googleapis.com/css?family=Karla|Archivo|Open+Sans|Roboto|Playfair+Display|Montserrat&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Karla|Roboto&display=swap" rel="stylesheet">
    </head>
    <body>
       <!-- pop-up for mastery -->
@@ -19,13 +19,21 @@
       <div class="intro">
          <!-- mini balloons -->
          <div class="mini">
-            <div class="balloon-box"><img class="mini-left" id="mini1" src="images/pink.png" ></div>
-            <div class="balloon-box"><img class="mini-left" id="mini2" src="images/yellow.png" ></div>
-            <div class="balloon-box"><img class="mini-right" id="mini3" src="images/green.png" ></div>
-            <div class="balloon-box"><img class="mini-right" id="mini4" src="images/blue.png" ></div>
+            <div class="balloon-box"><img class="mini-left" id="mini1" src="images/pink.png"
+                 title="mini red balloon" alt="mini red balloon" ></div>
+            <div class="balloon-box"><img class="mini-left" id="mini2" src="images/yellow.png"
+                 title="mini yellow balloon" alt="mini yellow balloon" ></div>
+            <div class="balloon-box"><img class="mini-right" id="mini3" src="images/green.png"
+                 title="mini green balloon" alt="mini green balloon" ></div>
+            <div class="balloon-box"><img class="mini-right" id="mini4" src="images/blue.png"
+                 title="mini blue balloon" alt="mini blue balloon" ></div>
          </div>
-        <center><h1 style="font-size:40px;letter-spacing:4px">Predicting What Students Know</h1></center>
-        <center><h2>An Introduction to Bayesian Knowledge Tracing</h2></center>
+        <center>
+           <h1 style="font-size:40px;letter-spacing:4px">Predicting What Students Know</h1>
+        </center>
+        <center>
+           <h2>An Introduction to Bayesian Knowledge Tracing</h2>
+        </center>
         <center><div class="description">
           <h4>
             <b>Bayesian Knowledge Tracing</b>, or <b>BKT</b>, is an artificial intelligence
@@ -54,7 +62,7 @@
             Every time the student answers a question, our BKT algorithm calculates
             <b>P(learned)</b>, the probability that the student has learned the skill
             they are working on, using the values of these parameters.
-            The formula for <b>P(learned)</b> depends on whether their response was correct.
+            The formula for <b>P(learned)</b> depends on whether their response was correct. 
             <input type="button" class="math" value="See the math" onclick="showMath(this, math)" />
             <div class="extra" id="math">
                <br />
@@ -62,14 +70,17 @@
                learned the skill previously (at time <i>n-1</i>), based on whether
                they answered the current question (at time <i>n</i>) correctly or incorrectly.
                <br />
-               <img class="formula" src="images/right-formula.png">
+               <img class="formula" src="images/right-formula.png" title="p learned at time n-1 if correct"
+                    alt="p learned at time n-1 if correct" >
                <br />
-               <img class="formula" src="images/wrong-formula.png">
+               <img class="formula" src="images/wrong-formula.png" title="p learned at time n-1 if wrong"
+                    alt="p learned at time n-1 if wrong" >
                <br /><br />
                Then, we use the result of our first calculation to compute the
                conditional probability that the student has learned the skill now
                (at time <i>n</i>).
-               <img class="formula" src="images/p-learned.png" style="width:820px;margin-bottom:-20px;">
+               <img class="formula" src="images/p-learned.png" title="p learned at time n given answer"
+                    alt="p learned at time n given answer" style="width:820px;margin-bottom:-20px;">
             </div>
             <br /><br />
             For the next question, we use <b>P(learned)</b> as the new value of <b>P(known)</b>.
@@ -88,7 +99,9 @@
           </h4>
           <br />
           <h2>Let's begin!</h2>
-          <a href="#start"><img class="arrow" src="images/down-arrow.png"></a>
+          <a href="#start">
+             <img class="arrow" src="images/down-arrow.png" title="start arrow" alt="start arrow" >
+          </a>
         </div></center>
       </div>
 
@@ -96,7 +109,7 @@
         <div class="header" id="header">
            <h1 style="margin-bottom:0;">BKT Balloon Simulator</h1>
            <h4 style="margin-top:25px;font-size:17px;">
-              Drag the sliders on the right to adjust the parameters and help the balloon rise.
+              Drag/click the sliders on the right to adjust the parameters and help the balloon rise.
               Explore on your own or use the following prompts as a guide.
            </h4>
         </div>
@@ -105,8 +118,7 @@
             <ol>
               <li>
                 Find two parameter combinations that will result in mastery
-                on the next practice opportunity if the student answers correctly
-                (aka. <b>P(learned if correct)</b> ≥ 0.95).
+                if the student answers correctly (aka. <b>P(learned if correct)</b> ≥ 0.95).
                 Press "answer correct" to verify your results.
               </li>
               <input type="button" class="more" value="More" onclick="showMore(this, more1)" />
@@ -117,26 +129,28 @@
                 </li>
               </ul>
               <li>
-                What happens to <b>P(learned)</b> if <b>P(guess)</b> and <b>P(slip)</b>
-                stay at 0.5 and you only adjust <b>P(known)</b> and <b>P(will learn)</b>?
+                What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
+                if <b>P(guess)</b> and <b>P(slip)</b> stay at 0.5 and you only adjust
+                <b>P(known)</b> and <b>P(will learn)</b>?
               </li>
               <input type="button" class="more second" value="More" onclick="showMore(this, more2)" />
               <ul class="extra" id="more2">
                 <li>
-                  Usually, the <b>P(learned)</b> formula differs depending on whether the student answers the question correctly.
-                  However, both formulas result in the same probability if both <b>P(guess)</b> and <b>P(slip)</b> = 0.5.
+                  Again, the <b>P(learned)</b> formula differs depending on whether the student
+                  answers the question correctly. However, both formulas result in the same
+                  probability if <b>P(guess)</b> and <b>P(slip)</b> = 0.5.
                 </li>
               </ul>
               <li>
-                 What happens to <b>P(learned)</b> if <b>P(guess)</b> and/or <b>P(slip)</b>
-                 exceeds 0.5?
+                 What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
+                 if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?
               </li>
               <input type="button" class="more third" value="More" onclick="showMore(this, more3)" />
               <ul class="extra" id="more3">
                 <li>
                   <b>P(learned)</b> is higher if the user answers <i>incorrectly</i> vs. <i>correctly</i>.
-                  Typically <b>P(guess)</b> is bounded at 0.3 and <b>P(slip)</b> at 0.1 for this reason
-                  <a href="#cit3" style="color:#000">[3]</a>.
+                  This is why <b>P(guess)</b> is typically bounded at 0.3 and <b>P(slip)</b> at 0.1.
+                  <a href="#cit3" style="color:#000">[3]</a>
                 </li>
                 <li>
                   Does it make sense why the balloon flips now?
@@ -163,27 +177,32 @@
                <h3>P(known): <span id="demoI"></span></h3>
             </div>
             <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider"
-                   style="background-image: linear-gradient(to right, #f0c297, #fccfcf)" id="init" oninput="updateI(this.value)" />
+                   style="background-image: linear-gradient(to right, #f0c297, #fccfcf)" id="init"
+                   oninput="updateI(this.value)" />
 
             <!-- trans -->
-            <div class="des" onmouseenter="displayInfo(tDes)" onmouseleave="hideInfo(tDes)" style="width:150px">
+            <div class="des" onmouseenter="displayInfo(tDes)" onmouseleave="hideInfo(tDes)"
+                 style="width:150px">
                <div class="info" id="tDes" style="padding-left:160px;margin-top:-5px">
                   Changes the storminess and number of clouds to represent learning difficulty.
                </div>
                <h3>P(will learn): <span id="demoT"></span></h3>
             </div>
             <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider"
-                   style="background-image: linear-gradient(to right, #f2b3c3, #e0d1e8)" id="trans" oninput="updateT(this.value)" />
+                   style="background-image: linear-gradient(to right, #f2b3c3, #e0d1e8)" id="trans"
+                   oninput="updateT(this.value)" />
 
             <!-- slip -->
-            <div class="des" onmouseenter="displayInfo(sDes)" onmouseleave="hideInfo(sDes)" style="width:110px">
+            <div class="des" onmouseenter="displayInfo(sDes)" onmouseleave="hideInfo(sDes)"
+                 style="width:110px">
                <div class="info" id="sDes" style="padding-left:115px">
                   Certain values will flip the balloon.
                </div>
                <h3>P(slip): <span id="demoS"></span></h3>
             </div>
             <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider"
-                   style="background-image: linear-gradient(to right, #d3cef2, #c2dff0)" id="slip" oninput="updateS(this.value)" />
+                   style="background-image: linear-gradient(to right, #d3cef2, #c2dff0)" id="slip"
+                   oninput="updateS(this.value)" />
 
             <!-- guess -->
             <div class="des" onmouseenter="displayInfo(gDes)" onmouseleave="hideInfo(gDes)">
@@ -192,8 +211,8 @@
                </div>
                <h3>P(guess): <span id="demoG"></span></h3>
             </div>
-            <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider" id="guess" oninput="updateG(this.value)"
-                   style="margin-bottom:20px;" />
+            <input type="range" min="0.0" max="1.0" value="0.5" step="0.01" class="slider" id="guess"
+                   oninput="updateG(this.value)" style="margin-bottom:20px;" />
 
             <!-- probabilities -->
             <h4 style="margin-bottom:10px;font-size:17px">
@@ -205,13 +224,15 @@
             <!-- P(learned if correct) -->
             <div class="left">
                <h3 style="margin-bottom:0">P(learned if correct): <span id="correct"></span></h3>
-               <input type="button" class="button" id="learned1" value="Answer Correct" onclick="changeP(correct, init)" />
+               <input type="button" class="button" id="learned1" value="Answer Correct"
+                      onclick="changeP(correct, init)" />
             </div>
 
             <!-- P(learned if wrong) -->
             <div class="right">
                <h3 style="margin-bottom:0">P(learned if wrong): <span id="wrong"></span></h3>
-               <input type="button" class="button" id="learned2" value="Answer Wrong" onclick="changeP(wrong, init)" />
+               <input type="button" class="button" id="learned2" value="Answer Wrong"
+                      onclick="changeP(wrong, init)" />
             </div>
 
             <h4 style="padding-top:100px;position:absolute;font-style:italic">

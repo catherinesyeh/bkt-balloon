@@ -85,46 +85,46 @@ function adjustClouds(val) {
       cloud2.style.display = "block";
       cloud3.style.display = "block";
       cloud4.style.display = "block";
-      cloud1.style.filter = "brightness(25%)";
-      cloud2.style.filter = "brightness(25%)";
-      cloud3.style.filter = "brightness(25%)";
-      cloud4.style.filter = "brightness(25%)";
+      cloud1.style.filter = "brightness(55%)";
+      cloud2.style.filter = "brightness(55%)";
+      cloud3.style.filter = "brightness(55%)";
+      cloud4.style.filter = "brightness(55%)";
    } else if (val < 0.3) {
       cloud1.style.display = "block";
       cloud2.style.display = "block";
       cloud3.style.display = "block";
       cloud4.style.display = "none";
-      cloud1.style.filter = "brightness(25%)";
-      cloud2.style.filter = "brightness(25%)";
-      cloud3.style.filter = "brightness(25%)";
+      cloud1.style.filter = "brightness(55%)";
+      cloud2.style.filter = "brightness(55%)";
+      cloud3.style.filter = "brightness(55%)";
    } else if (val < 0.4) {
       cloud1.style.display = "block";
       cloud2.style.display = "block";
       cloud3.style.display = "block";
       cloud4.style.display = "none";
-      cloud1.style.filter = "brightness(50%)";
-      cloud2.style.filter = "brightness(50%)";
-      cloud3.style.filter = "brightness(50%)";
+      cloud1.style.filter = "brightness(70%)";
+      cloud2.style.filter = "brightness(70%)";
+      cloud3.style.filter = "brightness(70%)";
    } else if (val < 0.55) {
       cloud1.style.display = "block";
       cloud2.style.display = "block";
       cloud3.style.display = "none";
       cloud4.style.display = "none";
-      cloud1.style.filter = "brightness(50%)";
-      cloud2.style.filter = "brightness(50%)";
+      cloud1.style.filter = "brightness(70%)";
+      cloud2.style.filter = "brightness(70%)";
    } else if (val < 0.7) {
       cloud1.style.display = "block";
       cloud2.style.display = "block";
       cloud3.style.display = "none";
       cloud4.style.display = "none";
-      cloud1.style.filter = "brightness(75%)";
-      cloud2.style.filter = "brightness(75%)";
+      cloud1.style.filter = "brightness(85%)";
+      cloud2.style.filter = "brightness(85%)";
    } else if (val < 0.8) {
       cloud1.style.display = "block";
       cloud2.style.display = "none";
       cloud3.style.display = "none";
       cloud4.style.display = "none";
-      cloud1.style.filter = "brightness(75%)";
+      cloud1.style.filter = "brightness(85%)";
    } else if (val < 0.95) {
       cloud1.style.display = "block";
       cloud2.style.display = "none";
