@@ -62,7 +62,7 @@
             Every time the student answers a question, our BKT algorithm calculates
             <b>P(learned)</b>, the probability that the student has learned the skill
             they are working on, using the values of these parameters.
-            The formula for <b>P(learned)</b> depends on whether their response was correct. 
+            The formula for <b>P(learned)</b> depends on whether their response was correct.
             <input type="button" class="math" value="See the math" onclick="showMath(this, math)" />
             <div class="extra" id="math">
                <br />
@@ -105,7 +105,7 @@
         </div></center>
       </div>
 
-      <div class="prompt-container">
+      <div class="prompt-container" id="p-contain">
         <div class="header" id="header">
            <h1 style="margin-bottom:0;">BKT Balloon Simulator</h1>
            <h4 style="margin-top:25px;font-size:17px;">
@@ -117,43 +117,52 @@
           <h4>
             <ol>
               <li>
-                Find two parameter combinations that will result in mastery
-                if the student answers correctly (aka. <b>P(learned if correct)</b> ≥ 0.95).
-                Press "answer correct" to verify your results.
+                Find two parameter combinations that will result in mastery if the student
+                answers correctly. <i>Hint:</i> make <b>P(learned if correct)</b>
+                and press "answer correct" to verify your results.
               </li>
               <input type="button" class="more" value="More" onclick="showMore(this, more1)" />
               <ul class="extra" id="more1">
+                 <li>
+                    Recall that <b>P(learned)</b> becomes the new value for <b>P(known)</b>.
+                 </li>
                 <li>
                   Explore what adjustments you have to make depending on <b>P(known)</b>.
                   Try a higher <b>P(known)</b> and a lower <b>P(known)</b> and compare your results.
                 </li>
               </ul>
               <li>
-                What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
-                if <b>P(guess)</b> and <b>P(slip)</b> stay at 0.5 and you only adjust
-                <b>P(known)</b> and <b>P(will learn)</b>?
+                 What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
+                 if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?
               </li>
               <input type="button" class="more second" value="More" onclick="showMore(this, more2)" />
               <ul class="extra" id="more2">
-                <li>
-                  Again, the <b>P(learned)</b> formula differs depending on whether the student
-                  answers the question correctly. However, both formulas result in the same
-                  probability if <b>P(guess)</b> and <b>P(slip)</b> = 0.5.
-                </li>
+                 <li>
+                   <b>P(learned)</b> is higher if the user answers <i>incorrectly</i> vs. <i>correctly</i>.
+                   This is why <b>P(guess)</b> is typically bounded at 0.3 and <b>P(slip)</b> at 0.1.
+                   <a href="#cit3" style="color:#000">[3]</a>
+                 </li>
+                 <li>
+                   Does it make sense why the balloon flips now?
+                 </li>
               </ul>
               <li>
-                 What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
-                 if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?
+                 What happens to <b>P(learned)</b> if the student answers incorrectly?
+                 <i>Hint:</i> compare <b>P(learned if wrong)</b> with <b>P(known)</b>
+                 (aka. your previous <b>P(learned)</b>).
               </li>
               <input type="button" class="more third" value="More" onclick="showMore(this, more3)" />
               <ul class="extra" id="more3">
                 <li>
-                  <b>P(learned)</b> is higher if the user answers <i>incorrectly</i> vs. <i>correctly</i>.
-                  This is why <b>P(guess)</b> is typically bounded at 0.3 and <b>P(slip)</b> at 0.1.
-                  <a href="#cit3" style="color:#000">[3]</a>
+                  Generally, <b>P(learned)</b> is assumed to always increase because BKT
+                  considers every answer, wrong or right, as a learning opportunity that
+                  brings you one step closer to mastery.
                 </li>
                 <li>
-                  Does it make sense why the balloon flips now?
+                  However, can you think of a situation where <b>P(learned)</b>
+                  might decrease with a wrong answer? Feel free to try modeling
+                  different scenarios with the sliders using your knowledge
+                  of the BKT parameters.
                 </li>
               </ul>
               <li>Keep exploring! Can you find any other flaws or interesting characteristics of BKT?</li>
@@ -255,7 +264,7 @@
       </div>
 
       <footer>
-         <center><div class="references">
+         <center><div class="references" id="refs">
             <h2 style="text-align:left">References</h2>
             <h4>
                <ol style="font-size:14px;">

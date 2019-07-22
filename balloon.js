@@ -142,6 +142,9 @@ function adjustClouds(val) {
 // show additional info for prompt
 function showMore(b, id) {
    id.classList.toggle("extra");
+
+
+   shiftFooter();
    b.value = (b.value === "More" ? "Less" : "More");
 }
 
@@ -230,4 +233,15 @@ function displayInfo(p) {
 
 function hideInfo(p) {
    p.style.display = "none";
+}
+
+// shift footer down if prompts expanded
+function shiftFooter() {
+   var promptHeight = document.getElementById("p-contain").clientHeight;
+   var refs = document.getElementById("refs");
+   if (promptHeight > gameHeight) {
+      refs.style.paddingTop = (promptHeight - gameHeight + 100) + "px";
+   } else {
+      refs.style.paddingTop = 50 + "px";
+   }
 }
