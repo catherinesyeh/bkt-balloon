@@ -190,39 +190,15 @@ function updateProbs() {
    wro = document.getElementById("wrong");
    wro.innerHTML = learnW.toFixed(2);
 
-   if (learnW > learnC) {
+   // deal with balloon
+   if (learnW > learnC && i >= 0.95) { // flip balloon & mastered
+      balloon.style.backgroundImage = "url('images/udmastered.png')";
+   } else if (learnW > learnC) { // flip balloon
       balloon.style.backgroundImage = "url('images/upsidedown.png')";
-   } else {
+   } else if (i >= 0.95) { // mastered
+      balloon.style.backgroundImage = "url('images/mastered.png')";
+   } else { // normal balloon
       balloon.style.backgroundImage = "url('images/balloon.png')";
-   }
-
-   // check if mastery achieved
-   if (i >= 0.95) {
-      mastered();
-   }
-}
-
-// display message upon mastery (P(L) >= 0.95)
-function mastered() {
-   // Get the modal
-   var modal = document.getElementById("myModal");
-
-   // Get the <span> element that closes the modal
-   var span = document.getElementsByClassName("close")[0];
-
-   // Display pop-up
-   modal.style.display = "block";
-
-   // When the user clicks on <span> (x), close the modal
-   span.onclick = function() {
-      modal.style.display = "none";
-   }
-
-   // When the user clicks anywhere outside of the modal, close it
-   window.onclick = function(event) {
-      if (event.target == modal) {
-         modal.style.display = "none";
-      }
    }
 }
 

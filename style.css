@@ -484,7 +484,7 @@ footer {
 
 .lightwaves {
    width: 100%;
-   background-image: url("images/light-small.png");
+   background-image: url("images/light.png");
    background-size: cover;
    position: absolute;
    bottom: 0px;
@@ -508,7 +508,7 @@ footer {
 
 .darkwaves {
    width: 100%;
-   background-image: url("images/dark-small.png");
+   background-image: url("images/dark.png");
    background-size: cover;
    position: absolute;
    bottom: 0px;
