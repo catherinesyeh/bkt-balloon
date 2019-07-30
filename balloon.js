@@ -12,10 +12,10 @@ var cloud2 = document.getElementById("cloud2");
 var cloud3 = document.getElementById("cloud3");
 var cloud4 = document.getElementById("cloud4");
 
-drift(cloud1, 0, 200, 50);
-drift(cloud2, 0, -200, -50);
-drift(cloud3, 0, 150, 25);
-drift(cloud4, 0, -150, -25);
+drift(cloud1, 0, 400, 100);
+drift(cloud2, 0, -400, -100);
+drift(cloud3, 0, 300, 50);
+drift(cloud4, 0, -300, -50);
 
 // move clouds side to side
 function drift(cloud, start, max, dir) {
