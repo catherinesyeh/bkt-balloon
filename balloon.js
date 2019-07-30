@@ -1,18 +1,21 @@
 var balloon = document.getElementById("balloon");
+var balloonHeight = balloon.clientHeight;
 
 // set height of game
-var gameHeight = document.getElementById("game").clientHeight;
-var height = gameHeight - balloon.clientHeight;
+var game = document.getElementById("game");
+var gameHeight = game.clientHeight;
+var height = gameHeight - balloonHeight;
 
 // clouds
 var cloud1 = document.getElementById("cloud1");
 var cloud2 = document.getElementById("cloud2");
 var cloud3 = document.getElementById("cloud3");
 var cloud4 = document.getElementById("cloud4");
-drift(cloud1, 0, 400, 100);
-drift(cloud2, 0, -400, -100);
-drift(cloud3, 0, 300, 50);
-drift(cloud4, 0, -300, -50);
+
+drift(cloud1, 0, 200, 50);
+drift(cloud2, 0, -200, -50);
+drift(cloud3, 0, 150, 25);
+drift(cloud4, 0, -150, -25);
 
 // move clouds side to side
 function drift(cloud, start, max, dir) {
@@ -142,9 +145,7 @@ function adjustClouds(val) {
 // show additional info for prompt
 function showMore(b, id) {
    id.classList.toggle("extra");
-
-
-   shiftFooter();
+   (document.body.clientWidth > 1330) ? shiftFooter() : positionElements();
    b.value = (b.value === "More" ? "Less" : "More");
 }
 
@@ -211,13 +212,33 @@ function hideInfo(p) {
    p.style.display = "none";
 }
 
+var prompts = document.getElementById("p-contain");
 // shift footer down if prompts expanded
 function shiftFooter() {
-   var promptHeight = document.getElementById("p-contain").clientHeight;
+   var promptHeight = prompts.clientHeight;
    var refs = document.getElementById("refs");
    if (promptHeight > gameHeight) {
       refs.style.paddingTop = (promptHeight - gameHeight + 100) + "px";
    } else {
       refs.style.paddingTop = 50 + "px";
+   }
+}
+
+// position elements for smaller screens
+if (document.body.clientWidth <= 1330) {
+   positionElements();
+}
+
+function positionElements() {
+   var sliders = document.getElementById("slidecontain");
+   var sliderHeight = sliders.clientHeight;
+   var promptHeight = prompts.clientHeight;
+
+   if (document.body.clientWidth <= 1330) {
+      sliders.style.marginTop = promptHeight + "px";
+      game.style.marginTop = (promptHeight + sliders.clientHeight + 0.5 * balloonHeight + 50) + "px";
+   } else {
+      sliders.style.marginTop = 0 + "px";
+      game.style.marginTop = 0 + "px";
    }
 }

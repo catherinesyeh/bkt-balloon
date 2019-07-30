@@ -200,7 +200,7 @@ footer {
    min-width: 450px;
    max-width: 500px;
    min-height: 850px;
-   height: 100%; */
+   height: 100%;
 }
 
 .header {
@@ -529,5 +529,131 @@ footer {
    }
    75% {
       height: 85px;
+   }
+}
+
+/* trying out responsive features */
+@media screen and (max-width: 1330px) {
+   /* prompts */
+   .prompt-container {
+      width: calc(100% - 40px);
+      min-width: calc(100% - 40px);
+      max-width: calc(100% - 40px);
+      height: auto;
+      min-height: auto;
+   }
+
+   .prompts {
+      width: calc(100% - 40px);
+      margin-left: -10px;
+   }
+
+   /* intro to sliders */
+   .explain {
+      width: calc(100% - 40px);
+      min-width: calc(100% - 40px);
+      max-width: calc(100% - 40px);
+   }
+
+   .header {
+      width: calc(100% - 40px);
+      margin-left: -10px;
+   }
+
+   /* sliders */
+   .slidecontainer {
+      width: calc(100% - 40px);
+      min-width: calc(100% - 40px);
+      max-width: calc(100% - 40px);
+      height: auto;
+      min-height: auto;
+      margin-right: -10px;
+      z-index: 10;
+   }
+
+   .game {
+      margin-top: 1300px;
+   }
+}
+
+@media screen and (max-width: 1060px) {
+   .description {
+      width: calc(100% - 40px);
+   }
+
+   .references {
+      width: calc(100% - 40px);
+      padding-top: 20px;
+   }
+
+   #mainTitle, #subtitle {
+      margin-left: 20px;
+      margin-right: 20px;
+   }
+
+   #pL {
+      width: 100% !important;
+   }
+
+   .cloud {
+      width: 250px;
+      height: 50px;
+   }
+
+   .balloon {
+      width: 252px;
+      height: 360px;
+      left: calc(50% - 126px);
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .intro {
+      padding-top: 75px;
+   }
+
+   .formula {
+      width: 100%;
+   }
+
+   /* mini balloons */
+   .mini {
+      top: -30px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+   }
+
+   .balloon-box {
+      margin-left: auto;
+      margin-right: auto;
+      width: 50px;
+      height: 100px;
+   }
+
+   .mini-left {
+      display: block;
+      width: 50px;
+      height: auto;
+      position: absolute;
+   }
+
+   .mini-right {
+      display: block;
+      width: 50px;
+      height: auto;
+      position: absolute;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .left, .right {
+      width: 100%;
+      position: relative;
+   }
+
+   #hint {
+      padding-top: 0px !important;
    }
 }
