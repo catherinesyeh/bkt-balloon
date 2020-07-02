@@ -105,10 +105,11 @@ footer {
    height: auto;
    padding-top: 25px;
    transition: 0.5s ease-in-out;
+   opacity: 0.7;
 }
 
 .arrow:hover {
-    opacity: 0.7;
+    opacity: 1;
     transition: 0.5s ease-in-out;
 }
 
