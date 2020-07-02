@@ -56,10 +56,12 @@ li {
 
 a {
    color: #fff;
+   transition: 0.5s ease-in-out;
 }
 
 a:hover {
    opacity: 0.7;
+   transition: 0.5s ease-in-out;
 
 }
 
@@ -102,6 +104,12 @@ footer {
    width: 20px;
    height: auto;
    padding-top: 25px;
+   transition: 0.5s ease-in-out;
+}
+
+.arrow:hover {
+    opacity: 0.7;
+    transition: 0.5s ease-in-out;
 }
 
 /* mini balloons */
@@ -244,6 +252,7 @@ footer {
    cursor: pointer;
    outline: none;
    z-index: 1;
+   transition: 0.5s ease-in-out;
 }
 
 .reset {
@@ -261,6 +270,7 @@ footer {
    outline: none;
    right: 0;
    top: 20px;
+   transition: 0.5s ease-in-out;
 }
 
 .more {
@@ -280,6 +290,7 @@ footer {
    cursor: pointer;
    outline: none;
    opacity: 0.7;
+   transition: 0.5s ease-in-out;
 }
 
 .button:hover,
@@ -287,6 +298,7 @@ footer {
 .more:hover {
    opacity: 1;
    outline: none;
+   transition: 0.5s ease-in-out;
 }
 
 .math {
@@ -439,7 +451,7 @@ footer {
    position: absolute;
    padding-left: 135px;
    z-index: 1;
-   transition: 0.3s;
+   transition: 0.5s ease-in-out;
    opacity: 0.7;
    font-style: italic;
    font-size: 14px;
@@ -447,6 +459,7 @@ footer {
 
 .des {
    width: 135px;
+   transition: 0.5s ease-in-out;
 }
 
 

@@ -59,7 +59,7 @@
             <b>P(learned)</b>, the probability that the student has learned the skill
             they are working on, using the values of these parameters.
             The formula for <b>P(learned)</b> depends on whether their response was correct.
-            <input type="button" class="math" value="See the math" onclick="showMath(this, math)" />
+            <input type="button" class="math" title="See the math" value="See the math" onclick="showMath(this, math)" />
             <div class="extra" id="math">
                <br />
                First, we compute the conditional probability that the student
@@ -119,7 +119,7 @@
                 answers correctly. <i>Hint:</i> make <b>P(learned if correct)</b> ≥ 0.95
                 and press "answer correct" to verify your results.
               </li>
-              <input type="button" class="more" value="More" onclick="showMore(this, more1)" />
+              <input type="button" title="More" class="more" value="More" onclick="showMore(this, more1)" />
               <ul class="extra" id="more1">
                  <li>
                     Recall that <b>P(learned)</b> becomes the new value for <b>P(known)</b>.
@@ -133,7 +133,7 @@
                  What happens to <b>P(learned if correct)</b> and <b>P(learned if wrong)</b>
                  if <b>P(guess)</b> and/or <b>P(slip)</b> exceeds 0.5?
               </li>
-              <input type="button" class="more second" value="More" onclick="showMore(this, more2)" />
+              <input type="button" title="More" class="more second" value="More" onclick="showMore(this, more2)" />
               <ul class="extra" id="more2">
                  <li>
                    <b>P(learned)</b> is higher if the user answers <i>incorrectly</i> vs. <i>correctly</i>.
@@ -149,7 +149,7 @@
                  <i>Hint:</i> compare <b>P(learned if wrong)</b> with <b>P(known)</b>
                  (aka. your previous <b>P(learned)</b>).
               </li>
-              <input type="button" class="more third" value="More" onclick="showMore(this, more3)" />
+              <input type="button" title="More" class="more third" value="More" onclick="showMore(this, more3)" />
               <ul class="extra" id="more3">
                 <li>
                   Generally, <b>P(learned)</b> is always assumed to increase because BKT
@@ -176,7 +176,7 @@
 
          <!-- sliders -->
          <div class="slidecontainer" id="slidecontain">
-            <input type="button" class="reset" id="res" value="Reset" onclick="reset()" />
+            <input type="button" title="reset" class="reset" id="res" value="Reset" onclick="reset()" />
 
             <!-- init -->
             <div class="des" onmouseenter="displayInfo(iDes)" onmouseleave="hideInfo(iDes)"
@@ -234,14 +234,14 @@
             <!-- P(learned if correct) -->
             <div class="left">
                <h3 style="margin-bottom:0;">P(learned if correct): <span id="correct"></span></h3>
-               <input type="button" class="button" id="learned1" value="Answer Correct"
+               <input type="button" title="answer correct" class="button" id="learned1" value="Answer Correct"
                       onclick="changeP(correct, init)" />
             </div>
 
             <!-- P(learned if wrong) -->
             <div class="right">
                <h3 style="margin-bottom:0">P(learned if wrong): <span id="wrong"></span></h3>
-               <input type="button" class="button" id="learned2" value="Answer Wrong"
+               <input type="button" title="answer wrong" class="button" id="learned2" value="Answer Wrong"
                       onclick="changeP(wrong, init)" />
             </div>
 
@@ -290,7 +290,7 @@
                   </li>
                </ol>
                <br />
-               <i>Created by Catherine Yeh and Iris Howley.
+               <i style="font-size:14px;">Created by Catherine Yeh and Iris Howley, Williams College.
                   Funding for this research was provided by the IIS:Cyber-Human Systems program: NSF CISE award number 1849984.</i>
             </h4>
          </div></center>
