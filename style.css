@@ -9,6 +9,10 @@
 }
 
 /* pre-defined elements */
+* {
+    scroll-behavior: smooth;
+}
+
 html {
    height: 100%;
    font-family: Roboto !important;
@@ -78,6 +82,13 @@ footer {
    display: inline-block;
    text-align: left;
    color: #fff;
+}
+
+#back-to-top {
+    float: right;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
 }
 
 /* top stuff */
@@ -319,17 +330,16 @@ footer {
    outline: none;
    opacity: 0.7;
    transition: 0.5s ease-in-out;
-   transition-property: color, background;
 }
 
 .math:hover {
-   border: none;
+   border-color: transparent;
    background-image: linear-gradient(to left, #A98666, #A57380, #736C9B, #7499AD);
-   padding: 12px 15px;
+   background-repeat: no-repeat;
+   padding: 10px 15px;
    color: #fff;
    opacity: 1;
    transition: 0.5s ease-in-out;
-   transition-property: color, border, background-image;
 }
 
 /* The Modal (background) */
